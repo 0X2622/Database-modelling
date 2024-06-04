@@ -1,0 +1,447 @@
+Inserts::
+
+Insert av customers into contact_info:
+
+AC001:
+Insert into contact_info(contactID, FirstName, LastName, phoneNr)
+Values(contactID, "All creatures", "N/A", 5556622);
+
+
+AD001:
+
+Insert into contact_info(contactID, FirstName, LastName, phoneNR)
+values(contactID, "Jonathan", "Adams", "(206) 555-7623");
+
+
+AD002:
+Insert into contact_info(contactID, FirstName, LastName, phoneNR)
+values(contactID, "William", "Adams", "(503) 555-6187");
+
+
+
+AK001:
+Insert into contact_info(contactID, FirstName, LastName, phoneNR)
+values(contactID, "Animal Kingdom", "N/A", "(208) 555-7108");
+
+
+AB001 (adam johnson)
+Insert into contact_info(contactID, FirstName, LastName, phoneNR)
+values(contactID, "Adam", "Johnson", "(208) 555-1234");
+
+
+Insert av employees to contact_info:
+
+2
+Insert into contact_info(contactID, FirstName, LastName, phoneNR)
+values(contactID, "Todd", "Becker", "(206) 555-9482");
+
+
+8
+Insert into contact_info(contactID, FirstName, LastName, phoneNR)
+values(contactID, "Rosie", "Bowie", "(206) 555-1189");
+
+
+3
+Insert into contact_info(contactID, FirstName, LastName, phoneNR)
+values(contactID, "Maram", "Carrington", "(206) 555-3412");
+
+
+
+6
+Insert into contact_info(contactID, FirstName, LastName, phoneNR)
+values(contactID, "Liu", "Chiu", "(71) 555-7773");
+
+
+9
+Insert into contact_info(contactID, FirstName, LastName, phoneNR)
+values(contactID, "Ame", "Dennis", "(71) 555-4444");
+
+
+
+5
+Insert into contact_info(contactID, FirstName, LastName, phoneNR)
+values(contactID, "Peter", "Peters", "(71) 555-4848");
+
+
+
+1
+Insert into contact_info(contactID, FirstName, LastName, phoneNR)
+values(contactID, "Mary", "Plotter", "(206) 555-9857");
+
+
+
+7
+Insert into contact_info(contactID, FirstName, LastName, phoneNR)
+values(contactID, "Robert", "Wally", "(71) 555-5598");
+
+
+4
+Insert into contact_info(contactID, FirstName, LastName, phoneNR)
+values(contactID, "Margaret", "Walters", "(206) 555-8122");
+
+
+
+Insert into address:
+
+
+AC001:
+insert into address(addressID, street, city, state, zip)
+values(addressID, "21 Grace st.", "Tall Pines", "WA", "98746");
+
+
+AD001:
+insert into address(addressID, street, city, state, zip)
+values(addressID, "66 10th St", "Mountain View", "WA", "984101012");
+
+
+AD002:
+insert into address(addressID, street, city, state, zip)
+values(addressID, "1122 10th St", "Lakeville", "OR", "97401101");
+
+AK001:
+insert into address(addressID, street, city, state, zip)
+values(addressID, "15 Marlin Lane", "Borderville", "ID", "834835646");
+
+
+AB001 (Adam Johnson):
+insert into address(addressID, street, city, state, zip)
+values(addressID, "6th Ave St", "New York", "NY", "10011");
+
+
+2:
+insert into address(addressID, street, city, state, zip)
+values(addressID, "908 W. Capital Way", "Tacoma", "WA", "98401");
+
+8:
+insert into address(addressID, street, city, state, zip)
+values(addressID, "4726-11th Ave. N.E", "Seattle", "WA", "98105");
+
+3:
+insert into address(addressID, street, city, state, zip)
+values(addressID, "722 Moss Bay Blvd.", "Kirkland", "WA", "98033");
+
+6:
+insert into address(addressID, street, city, state, zip)
+values(addressID, "Coventry House Miner Rd.", "Tacoma", "WA", "98402");
+
+
+9:
+insert into address(addressID, street, city, state, zip)
+values(addressID, "7 Hounds tooth Rd.", "Bellingham", "WA", "98047");
+
+5:
+insert into address(addressID, street, city, state, zip)
+values(addressID, "14 Garrett Hill.", "Bellingham", "WA", "98047");
+
+1:
+insert into address(addressID, street, city, state, zip)
+values(addressID, "507-20th Ave. E. Apt 2A", "Seattle", "WA", "98122");
+
+7:
+insert into address(addressID, street, city, state, zip)
+values(addressID, "Edgeham Hollow Winchester Way", "Seattle", "WA", "98125");
+
+4:
+insert into address(addressID, street, city, state, zip)
+values(addressID, "41 10 Old Redmond Rd.", "Redmond", "WA", "98052");
+
+
+
+Insert into petOwner:
+
+AC001:
+Insert into petOwner(customerID, customerType, faxNR, addressID, contactID)
+values("AC001", 2, "(206) 555-7854", 1, 1);
+
+
+AD001:
+Insert into petOwner(customerID, customerType, faxNR, addressID, contactID)
+values("AD001", 1, "(206) 555-8855", 2, 2);
+
+AD002:
+Insert into petOwner(customerID, customerType, faxNR, addressID, contactID)
+values("AD002", 1, "(503) 555-7319", 3, 3);
+
+AK001:
+Insert into petOwner(customerID, customerType, faxNR, addressID, contactID)
+values("AK001", 2, "N/A", 4, 4);
+
+AB001:
+Insert into petOwner(customerID, customerType, faxNR, addressID, contactID)
+values("AB001", 1, "N/A", 5, 5);
+
+
+
+
+Insert into employee:
+
+2:
+insert into employee(employeeID, degree, hireDate, addressID, contactID)
+values(2, "MS.", "4-Aug 92", 6, 6);
+
+8:
+insert into employee(employeeID, degree, hireDate, addressID, contactID)
+values(8, "B.S.", "15-Mar-94", 7, 7);
+
+
+3:
+insert into employee(employeeID, degree, hireDate, addressID, contactID)
+values(3, "MS.", "11-Apr-92", 8, 8);
+
+
+6:
+insert into employee(employeeID, degree, hireDate, addressID, contactID)
+values(6, "MS.", "17-Oct-93", 9, 9);
+
+9:
+insert into employee(employeeID, degree, hireDate, addressID, contactID)
+values(9, "MS.", "15-Nov-94", 10, 10);
+
+5:
+insert into employee(employeeID, degree, hireDate, addressID, contactID)
+values(5, "B.S.", "17-Oct-93", 11, 11);
+
+1:
+insert into employee(employeeID, degree, hireDate, addressID, contactID)
+values(1, "PhD.", "1-May-92", 12, 12);
+
+7:
+insert into employee(employeeID, degree, hireDate, addressID, contactID)
+values(7, "AA.", "12-Jan-94", 13, 13);
+
+4:
+insert into employee(employeeID, degree, hireDate, addressID, contactID)
+values(4, "MS.", "3-May-93", 14, 14);
+
+
+
+
+
+insert species::
+
+insert into species(speciesName)
+values("rabbit");
+
+insert into species(speciesName)
+values("dog");
+
+insert into species(speciesName)
+values("lizard");
+
+insert into species(speciesName)
+values("skunk");
+
+insert into species(speciesName)
+values("pig");
+
+insert into species(speciesName)
+values("horse");
+
+insert into species(speciesName)
+values("rat");
+
+insert into species(speciesName)
+values("scorpion");
+
+
+
+
+
+
+
+insert breed::
+
+insert into breed(breedName, speciesName)
+values("Long Ear", "rabbit");
+
+insert into breed(breedName, speciesName)
+values("German Shepherd", "dog");
+
+insert into breed(breedName, speciesName)
+values("Chameleon", "lizard");
+
+insert into breed(breedName, speciesName)
+values("N/A", "Skunk");
+
+insert into breed(breedName, speciesName)
+values("Potbelly", "Pig");
+
+insert into breed(breedName, speciesName)
+values("Palomino", "horse");
+
+insert into breed(breedName, speciesName)
+values("Mixed", "dog");
+
+insert into breed(breedName, speciesName)
+values("N/A", "rat");
+
+insert into breed(breedName, speciesName)
+values("Beagle", "dog");
+
+insert into breed(breedName, speciesName)
+values("emperor", "scorpion");
+
+
+
+
+
+
+
+
+Inserts service:
+
+insert into service(serviceID, treatment, price)
+values("T1003", "Lab Work - Misc", "$35.00");
+
+insert into service(serviceID, treatment, price)
+values("T1001", "Lab Work - Cerology", "$75.00");
+
+insert into service(serviceID, treatment, price)
+values("T0300", "General Exam", "$50.00");
+
+insert into service(serviceID, treatment, price)
+values("M0202", "Zinc Oxide - 3 oz", "$7.80");
+
+insert into service(serviceID, treatment, price)
+values("T2003", "Flea Spray", "$25.00");
+
+insert into service(serviceID, treatment, price)
+values("M0500", "Nyostatine - 1 oz", "$11.50");
+
+insert into service(serviceID, treatment, price)
+values("M0702", "Xaritain Glyconol - 2 oz", "$34.50");
+
+insert into service(serviceID, treatment, price)
+values("T0404", "Repair complex fracture", "$230.00");
+
+insert into service(serviceID, treatment, price)
+values("T0408", "Cast affected area", "$120.00");
+
+
+
+
+
+Inserts into pets:
+
+
+AC001
+
+insert into pet(petID, DoB, breedName, speciesName, gender, petName, customerID)
+values("AC001-01", "4/8/92", "Long Ear", "rabbit", "M", "Bobo", "AC001");
+
+insert into pet(petID, DoB, breedName, speciesName, gender, petName, customerID)
+values("AC001-04", "6/1/90", "German Shepherd", "Dog", "M", "Fido", "AC001");
+
+insert into pet(petID, DoB, breedName, speciesName, gender, petName, customerID)
+values("AC001-02", "5/1/92", "Chameleon", "Lizard", "F", "Presto Chango", "AC001");
+
+insert into pet(petID, DoB, breedName, speciesName, gender, petName, customerID)
+values("AC001-03", "8/1/91",  "N/A", "Skunk", "M", "Stinky", "AC001");
+
+AD001
+
+insert into pet(petID, DoB, breedName, speciesName, gender, petName, customerID)
+values("AD001-01", "2/15/91",  "Potbelly", "Pig", "F", "Patty", "AD001");
+
+insert into pet(petID, DoB, breedName, speciesName, gender, petName, customerID)
+values("AD001-02", "4/10/90",  "Palomino", "Horse", "M", "Rising Sun", "AD001");
+
+
+AD002
+
+insert into pet(petID, DoB, breedName, speciesName, gender, petName, customerID)
+values("AD002-01", "2/15/91",  "Mixed", "Dog", "F", "Dee Dee", "AD002");
+
+
+
+AK001
+
+insert into pet(petID, DoB, breedName, speciesName, gender, petName, customerID)
+values("AK001-03","21/1/88",  "N/A", "rat", "M", "Jerry", "AK001");
+
+insert into pet(petID,DoB, breedName, speciesName, gender, petName, customerID)
+values("AK001-07","8/1/92",  "Beagle", "Dog", "M", "Luigi", "AK001");
+
+
+AB001 (adam johnson)
+
+insert into pet(petID, DoB, breedName, speciesName, gender, petName, customerID)
+values("AB001-01", "22/07/92",  "Emperor", "Scorpion", "M", "Fi Fi", "AB001");
+
+
+
+
+
+Insert appointment:
+
+AB001 (Adam Johnson):
+insert into appointment(appointmentID, date, petID, employeeID)
+values(1, "5/9/99", "AB001-01", "4");
+
+insert into appointment(appointmentID, date, petID, employeeID)
+values(2, "5/9/99", "AB001-01", "4");
+
+insert into appointment(appointmentID, date, petID, employeeID)
+values(3, "5/9/99", "AB001-01", "4");
+
+insert into appointment(appointmentID, date, petID, employeeID)
+values(4, "5/9/99","AB001-01", "4");
+
+
+
+AC001 All Creatures:
+
+
+insert into appointment(appointmentID, date, petID, employeeID)
+values(5, "11/4/98", "AC001-04", "3");
+
+insert into appointment(appointmentID, date, petID, employeeID)
+values(6, "11/4/98", "AC001-04", "3");
+
+insert into appointment(appointmentID, date, petID, employeeID)
+values(7, "11/4/98","AC001-04", "3");
+
+insert into appointment(appointmentID, date, petID, employeeID)
+values(8, "11/4/98", "AC001-04", "3");
+
+insert into appointment(appointmentID, date, petID, employeeID)
+values(9, "11/4/98", "AC001-04", "3");
+
+
+insert appointmentService::
+
+addam jonhson::
+
+insert into appointmentService(appointmentID, serviceID)
+values("1", "T1003");
+
+insert into appointmentService(appointmentID, serviceID)
+values("2", "T1001");
+
+insert into appointmentService(appointmentID, serviceID)
+values("3", "T0300");
+
+insert into appointmentService(appointmentID, serviceID)
+values("4", "M0202");
+
+all creatues::
+
+insert into appointmentService(appointmentID, serviceID)
+values("5", "T2003");
+
+insert into appointmentService(appointmentID, serviceID)
+values("6", "M0500");
+
+insert into appointmentService(appointmentID, serviceID)
+values("7", "M0702");
+
+insert into appointmentService(appointmentID, serviceID)
+values("8", "T0404");
+
+insert into appointmentService(appointmentID, serviceID)
+values("9", "T0408");
+
+
+
+
+

@@ -1,0 +1,175 @@
+//OBS Skapa först relationer & sedan skapa främmande nycklar efter det.
+
+Create tables::
+
+
+CREATE TABLE petOwner
+(
+	customerID	 varchar(5)	 NOT NULL,
+	customerType	 int(1)	  	 NOT NULL,
+	faxNR		 varchar(20)	 NOT NULL,
+	addressID	 int(3)	 	 NOT NULL,
+	contactID	 int(3)	  	 NOT NULL,
+	CONSTRAINT	 customerPK	 PRIMARY KEY(customerID)
+	
+);
+
+//främmandde nycklar läggs till efter andra relationen med primärnycklar skapats.
+Alter TABLE petOwner
+
+	ADD CONSTRAINT	 petOwner_contactIdFK	 FOREIGN KEY(contactID) REFERENCES contact_info(contactID)
+	ON UPDATE CASCADE
+	ON DELETE CASCADE,
+	ADD CONSTRAINT	 owner_addressIDFK	 FOREIGN KEY(addressID) REFERENCES address(addressID)
+	ON UPDATE CASCADE
+	ON DELETE CASCADE
+;
+
+
+
+
+CREATE TABLE pet 
+(
+	petID		 varchar(8)	 NOT NULL,
+	petName	 	 char(10)	 NOT NULL,
+	DoB		 varchar(20)	 NOT NULL,
+	gender		 char(2)	 NOT NULL,
+	customerID	 varchar(5)	 NOT NULL,
+	speciesName	 varchar(10)	 NOT NULL,
+	breedName	 varchar(25)	 NOT NULL,
+	CONSTRAINT	 petPK		 PRIMARY KEY(petID)	
+);
+
+//främmande nycklar för pet::
+alter table pet
+
+	ADD CONSTRAINT p_customerID 	 FOREIGN KEY(customerID) REFERENCES petOwner(customerID)
+	ON UPDATE CASCADE
+	ON DELETE CASCADE,
+	ADD CONSTRAINT p_breedFK 	 FOREIGN KEY(breedName) REFERENCES breed(breedName)
+	ON UPDATE CASCADE
+	ON DELETE CASCADE,
+	ADD CONSTRAINT p_speciesFK 	 FOREIGN KEY(speciesName) REFERENCES breed(speciesName)
+	ON UPDATE CASCADE
+	ON DELETE CASCADE
+
+;  
+
+
+
+
+
+
+CREATE TABLE contact_info 
+(
+	 contactID	 int(3)		 NOT NULL AUTO_INCREMENT,
+	 phoneNR	 varchar(20)	 NOT NULL,
+	 FirstName	 varchar(20)	 NOT NULL,
+	 LastName	 varchar(10)	 NOT NULL,
+	 CONSTRAINT	 contactIDPK	 PRIMARY KEY(contactID)
+);
+
+
+CREATE TABLE Employee
+(
+	 EmployeeID		 int(3)		 NOT NULL auto_increment,
+	 hireDate		 varchar(20)	 NOT NULL,
+	 degree			 varchar(20)	 NOT NULL,
+	 addressID		 int(3) 	 NOT NULL,
+	 contactID		 int(3) 	 NOT NULL,
+	 CONSTRAINT		 empPK		 PRIMARY KEY(EmployeeID)
+ 
+);
+
+ALTER TABLE employee ADD CONSTRAINT e_addressIDFK FOREIGN KEY(addressID) REFERENCES address(addressID)
+	ON UPDATE CASCADE
+	ON DELETE CASCADE,
+ADD CONSTRAINT e_contactIDFK FOREIGN KEY(contactID) REFERENCES contact_info(contactID)
+	ON UPDATE CASCADE
+	ON DELETE CASCADE
+;
+
+
+
+CREATE TABLE address 
+(
+	 addressID	 int(3)		 NOT NULL AUTO_INCREMENT,
+	 street		 varchar(20)	 NOT NULL,
+	 city		 varchar(20)	 NOT NULL,
+	 state		 varchar(20)	 NOT NULL,
+	 zip		 varchar(20)	 NOT NULL,
+	 CONSTRAINT	 addressIDPK	 PRIMARY KEY(addressID)
+);
+
+CREATE TABLE appointment
+(
+	 appointmentID	  int(3)	  NOT NULL AUTO_INCREMENT,
+	 date		  varchar(20)	  NOT NULL,
+	 employeeID	  int(3)	  NOT NULL,
+	 petID		  varchar(8)	  NOT NULL,
+	 CONSTRAINT	  appointmentIDPK PRIMARY KEY(appointmentID)
+
+);
+
+ALTER TABLE appointment 
+
+	 ADD CONSTRAINT	  a_employeeIDFK	  FOREIGN KEY(employeeID) REFERENCES employee(employeeID)
+	 ON UPDATE CASCADE
+	 ON DELETE CASCADE,
+	 ADD CONSTRAINT	  a_petIDFK	  FOREIGN KEY(petID) REFERENCES pet(petID)
+	 ON UPDATE CASCADE
+	 ON DELETE CASCADE
+;
+
+
+CREATE TABLE service
+(
+	 serviceID	 varchar(5)	 NOT NULL,
+	 treatment	 varchar(50)	 NOT NULL,
+	 price		 varchar(5)	 NOT NULL,
+	 CONSTRAINT	 servicePK	 PRIMARY KEY(serviceID)
+);
+
+CREATE TABLE appointmentService
+(
+	appointmentID	 int(3)			 NOT NULL,
+	serviceID	 varchar(5)		 NOT NULL,
+	CONSTRAINT	 appointmentServicePK 	 PRIMARY KEY(appointmentID, serviceID)
+);
+
+
+alter table appointmentService
+
+	ADD CONSTRAINT	 appointmentID_FK	 FOREIGN KEY(appointmentID) REFERENCES appointment(appointmentID)
+	ON UPDATE CASCADE
+	ON DELETE CASCADE,
+	ADD CONSTRAINT	 serviceID_FK	 	 FOREIGN KEY(serviceID) REFERENCES service(serviceID)
+	ON UPDATE CASCADE
+	ON DELETE CASCADE
+
+;
+
+
+
+CREATE TABLE species
+(
+	speciesName	  varchar(10) 	  NOT NULL,
+	CONSTRAINT	  speciesPK	  PRIMARY KEY(speciesName)
+);
+
+
+
+//detta skapar en primärnyckel av två kolumner, och refererar då även ena kolumnen till
+//primärnyckeln hos species, så det blir en composite primary key.
+CREATE TABLE breed
+(
+	breedName	 varchar(25)	 NOT NULL,
+	speciesName	 varchar(10)	 NOT NULL,
+	CONSTRAINT	 breedPK	 PRIMARY KEY(breedName, speciesName),
+	CONSTRAINT	 breedFK	 FOREIGN KEY(speciesName) REFERENCES species(speciesName)
+	ON UPDATE CASCADE
+	ON DELETE CASCADE
+		
+);
+
+
